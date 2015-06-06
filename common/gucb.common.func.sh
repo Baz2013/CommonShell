@@ -7,6 +7,9 @@
 #2.单行命令的方式使用文件中的自定义函数,使用前在当前shell窗口执行 . path/gucb.common.func.sh
 #如解压文件的函数 extract ,去除dos字符的函数 delDos delDosAll等
 
+platform=$(uname -s)
+
+if [ "${platform}" = "AIX" ];then
 . ~/user/gucb/common/ucr_conn
 . ~/user/gucb/common/ucr_err_conn
 
@@ -16,6 +19,8 @@ set -A arr_prov 0 11 34 38 86 97 36 13 31 87 51 81 59 79 91 74 89 75 76 10 85 88
 set -A str_prov 0 bj js fj yn hlj zj tj sh gs gd sc gx xz ln hun xj jx hen nm gz nx sd qh hb hub cq sx jl shx ah hn
 ##### 每个域省分的个数 
 set -A arr_area 0 4 5 4 4 4 2 3 5
+
+fi
 
 #### 自定义路径 
 GUCB_LOG_DIR="/ngbss/billing5/user/gucb/log" #脚本日志文件路径
