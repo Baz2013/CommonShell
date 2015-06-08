@@ -260,11 +260,12 @@ get_mon_days(){
 ##删除dos字符
 delDos(){
   ##echo $#
+  tmpfile=tmp_$$
   if [ $# -ne 1 ];then
     echo " Error !! 需要一个参数"
   else
-    tr -d '\015' < $1 >tmp
-    mv tmp $1
+    tr -d '\015' < $1 >${tmpfile}
+    mv ${tmpfile} $1
   fi
 }
 

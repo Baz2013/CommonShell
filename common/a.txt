@@ -1,0 +1,37 @@
+commit 1f86ccd063cf0df857ca2ccf97a6650a4aa9ab01
+Author: bazar_from_linux <sd4313@163.com>
+Date:   Sat Jun 6 23:49:17 2015 +0800
+
+    	modified:   common/gucb.common.func.sh
+    
+    å˜æ›´ç‚¹:
+    set -A arr ,ä¸ºAIXä¸­çš„å‘½ä»¤,åœ¨Linuxæ— æ³•ä½¿ç”¨,å¹¶ä¸”è¿™äº›æ•°ç»„æ˜¯ä¸šåŠ¡ç›¸å…³çš„
+    åœ¨Linuxå¹³å°ä¸‹å°†å…¶å±è”½æ‰äº†
+    
+    commit time: 2015-06-06 23:53
+    commit Author: gucb
+    commit platform: Linux (aliyun)
+
+diff --git a/common/gucb.common.func.sh b/common/gucb.common.func.sh
+index cf66157..b45d294 100644
+--- a/common/gucb.common.func.sh
++++ b/common/gucb.common.func.sh
+@@ -7,6 +7,9 @@
+ #2.µ¥ĞĞÃüÁîµÄ·½Ê½Ê¹ÓÃÎÄ¼şÖĞµÄ×Ô¶¨Òåº¯Êı,Ê¹ÓÃÇ°ÔÚµ±Ç°shell´°¿ÚÖ´ĞĞ . path/gucb.common.func.sh
+ #Èç½âÑ¹ÎÄ¼şµÄº¯Êı extract ,È¥³ıdos×Ö·ûµÄº¯Êı delDos delDosAllµÈ
+ 
++platform=$(uname -s)
++
++if [ "${platform}" = "AIX" ];then
+ . ~/user/gucb/common/ucr_conn
+ . ~/user/gucb/common/ucr_err_conn
+ 
+@@ -17,6 +20,8 @@ set -A str_prov 0 bj js fj yn hlj zj tj sh gs gd sc gx xz ln hun xj jx hen nm gz
+ ##### Ã¿¸öÓòÊ¡·ÖµÄ¸öÊı 
+ set -A arr_area 0 4 5 4 4 4 2 3 5
+ 
++fi
++
+ #### ×Ô¶¨ÒåÂ·¾¶ 
+ GUCB_LOG_DIR="/ngbss/billing5/user/gucb/log" #½Å±¾ÈÕÖ¾ÎÄ¼şÂ·¾¶
+ 
