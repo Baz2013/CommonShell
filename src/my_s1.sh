@@ -558,7 +558,7 @@ sh start_proc.sh;
 sleep 2;
 #rm start_proc.sh;
 
-U1n@i3v$e5r
+password
 
 ####################3
 cd ~/bin/;
@@ -880,7 +880,7 @@ mkdir -p tmp_0616;
 
 
 
-##########   U1n@i3v$e5r
+##########   password
 no=$(whoami|cut -c8);
 ps -ef|grep "billing${no}"|grep -v grep|grep 'c[0-9]\{4\}'
 ps -ef|grep "billing${no}"|grep -v grep|grep "c${no}"

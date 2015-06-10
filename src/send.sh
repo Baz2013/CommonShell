@@ -12,8 +12,8 @@ h="${host[i]}"
 ip="10.161.2.${h}"
 user="${users[i]}"
 echo "${ip} : ${user}"
-#./cmd.sh "${user}" "${ip}" "U1n@i3v\$e5r"
-#./cmd1.sh "${user}" "${ip}" "U1n@i3v\$e5r" "ps -ef|grep mmrun.sh|grep -v grep|awk '{print \$2}'|xargs kill" &
-./cmd1.sh "${user}" "${ip}" "U1n@i3v\$e5r" "cd ~/user/public/;nohup sh mmrun.sh &" &
+#./cmd.sh "${user}" "${ip}" "password"
+#./cmd1.sh "${user}" "${ip}" "password" "ps -ef|grep mmrun.sh|grep -v grep|awk '{print \$2}'|xargs kill" &
+./cmd1.sh "${user}" "${ip}" "password" "cd ~/user/public/;nohup sh mmrun.sh &" &
 let i=i+1
 done

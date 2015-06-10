@@ -33,7 +33,7 @@ get_data(){
 		h="${host[i]}"
 		ip="10.161.2.${h}"
 		cmd="df -g";
-		.send_cmd.sh  ${user} ${ip} 'U1n@i3v$e5r' "${cmd}" >> result.${h}.txt  &
+		.send_cmd.sh  ${user} ${ip} 'password' "${cmd}" >> result.${h}.txt  &
 		let i=i+1
 	done
 
