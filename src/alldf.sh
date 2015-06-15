@@ -17,7 +17,8 @@ _statistics_space(){
 		if [ "${cnt}" -gt 0 ];then
 			echo "\n\n*************Warning!!Warning  以下磁盘使用量超过了90%*********"
 			echo "Filesystem                          GB blocks     Free   %Used  Iused    %Iused   Mounted on"
-			cat result1.${h}.txt|grep -E 'bildata|billing'|grep '9[0-9]\{1\}%'
+			####cat result1.${h}.txt|grep -E 'bildata|billing'|grep '9[0-9]\{1\}%'
+			cat result1.${h}.txt|grep -E 'bildata|billing'|grep -E '9[0-9]{1}%|100%'
 		fi
 		let i=i+1
 		echo ""
