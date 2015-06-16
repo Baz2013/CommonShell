@@ -31,6 +31,7 @@ END LOOP;
 --COMMIT;
 END;
 
+  -- 执行成功，正常退出
   v_resultcode := 0;
 COMMIT;
 
