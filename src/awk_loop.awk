@@ -21,7 +21,7 @@ BEGIN{
 	###for in loop
 	printf("for in loop\n");
 
-	printf("printf environment virable \n");
+	printf("printf environment variable \n");
 
 	for(key in ENVIRON)
 	{
