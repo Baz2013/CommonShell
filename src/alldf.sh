@@ -12,13 +12,13 @@ _statistics_space(){
 		echo "Filesystem                          GB blocks     Free   %Used  Iused    %Iused   Mounted on"
 		h="${host[i]}"
 		tr -d "\015" < result.${h}.txt > result1.${h}.txt
-		cat result1.${h}.txt|grep -E 'bildata|billing'|grep -v '@'
-		cnt=$(cat result1.${h}.txt|grep -E 'bildata|billing'|grep '9[0-9]\{1\}%'|wc -l)
+		cat result1.${h}.txt|grep -E 'bildata|billing|mdbdata'|grep -v '@'
+		cnt=$(cat result1.${h}.txt|grep -E 'bildata|billing|mdbdata'|grep '9[0-9]\{1\}%'|wc -l)
 		if [ "${cnt}" -gt 0 ];then
 			echo "\n\n*************Warning!!Warning  以下磁盘使用量超过了90%*********"
 			echo "Filesystem                          GB blocks     Free   %Used  Iused    %Iused   Mounted on"
 			####cat result1.${h}.txt|grep -E 'bildata|billing'|grep '9[0-9]\{1\}%'
-			cat result1.${h}.txt|grep -E 'bildata|billing'|grep -E '9[0-9]{1}%|100%'
+			cat result1.${h}.txt|grep -E 'bildata|billing|mdbdata'|grep -E '9[0-9]{1}%|100%'
 		fi
 		let i=i+1
 		echo ""
