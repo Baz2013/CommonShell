@@ -1,5 +1,6 @@
 #!/bin/sh
 #文件分发脚本,实现将指定目录下的文件分发到其他主机的目录下 
+#第一个参数为全路径的文件名 第二个参数为要分发的省分
 
 if [ $# -ne "2" ];then
         echo "param wrong"
@@ -28,6 +29,19 @@ writeLog(){
         cur_date=$(date +"%Y%m%d")
         log_name=${cur_date}"".log
         printf "${cur_time}|$1|\n" >>${2}/send_file.${log_name}
+}
+
+##检查文件是否为.sh文件,如果是则退出脚本
+check_file(){
+        file=${1}
+        file_name=$(basename ${file})
+        len=$(expr length ${file_name})
+        pos=$(expr ${len} - 2)
+        post_fix=$(expr substr "${file_name}" "${pos}" 3)
+        #echo "$post_fix"
+        if [ "${post_fix}" == ".sh" ];then
+                exit
+        fi
 }
 
 check_param(){
@@ -137,6 +151,7 @@ clean_file(){
 }
 
 ######start #####
+check_file "${src_path}"
 check_param "${src_path}" "${prov_code}"
 get_area
 #echo "${area_no} ${serial}"
