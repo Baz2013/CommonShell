@@ -42,7 +42,8 @@ split -l ${FILELINE} -a 4 ${MYSRCFILE} ${PREFIX}
 
 ls ${PREFIX}*|awk -F'_' '{printf("mv %s %s%s_%s.%04s.%s\n", $0,$1,c,t,NR,"REDO")}' c=${CHANNELID} t=${DATETMP} >mv.sh
 
-sh mv.sh
+chmod 777 mv.sh
+./mv.sh
 rm mv.sh
 
 #back up
