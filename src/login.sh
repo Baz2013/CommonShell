@@ -1,5 +1,7 @@
 #!/bin/expect -f  
 
+# 主机跳转脚本
+
 if {$argc < 2} {
   puts stdout "$argv0 hostip username passwd\n"
   exit 1
