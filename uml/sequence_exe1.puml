@@ -1,0 +1,20 @@
+@startuml
+title 时序图
+
+==鉴权阶段==
+Alice -> Bob: 请求
+Bob -> Alice: 应答
+
+Bob -> Canny
+==数据上传==
+
+Alice -> Bob: 上传数据
+note left:这是显示在左边的备注
+Bob --> Canny: 转交数据
+...不超过5秒钟...
+Canny --> Bob: 状态返回
+note right:这是显示在右边的备注
+Bob -> Alice: 状态返回
+==状态显示==
+Alice -> Alice:给自己发消息
+@enduml
