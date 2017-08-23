@@ -2,13 +2,13 @@
 . ~/.bash_profile
 
 ## usage: sh script_name param
-## ¼ì²éÒ»¸ö³ÌÐòµÄËùÓÐÍ¨µÀ(t_channels.txtÖÐÅäÖÃ)ÊÇ·ñ¶¼ÒÑ×¢²á
+## ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½(t_channels.txtï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)ï¿½Ç·ï¿½ï¿½ï¿½×¢ï¿½ï¿½
 
 app=${1}
 if [ "x${app}" = "xfilter" ];then
-  records=`grep -Ew "${app}1|${app}2" t_channels.txt `
+  records=$(grep -Ew "${app}1|${app}2" t_channels.txt )
 else
-  records=`grep -Ew "${app}|M${app}" t_channels.txt `
+  records=$(grep -Ew "${app}|M${app}" t_channels.txt )
 fi
 
 if [ "x${records}" = "x" ];then
@@ -18,12 +18,11 @@ fi
 
 for rec in ${records}
 do  
-  ch=`echo ${rec}|awk -F, '{print $3}'`
-  res=`echo "ls /BOSS_S/OFCS/CLUSTER_A05/APP/${app}-${ch}"|zkshell|tail -3|grep -v "zk:"|sed 's/\n//g'`
+  ch=$(echo "${rec}"|awk -F, '{print $3}')
+  res=$(echo "ls /BOSS_S/OFCS/CLUSTER_A05/APP/${app}-${ch}"|zkshell|tail -3|grep -v "zk:"|sed 's/\n//g')
   if [ "x${res}" = "x[001]" ];then
     echo "${app} ${ch} had registed"
   else
     echo "${app} ${ch} didn't regist"
   fi
 done
-
