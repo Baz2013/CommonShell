@@ -2,7 +2,7 @@
 # $1 根据程序,通道号生成tb_service_channel表中的参数
 # 程序如pp,rr,split
 # 依赖service.txt 和 channel.cfg两个文件
-
+# check with shellcheck
 #usage: gern_channel_param.sh "send" "2" "13 31 36 87 97"
 
 if [ $# -ne 3 ];then
