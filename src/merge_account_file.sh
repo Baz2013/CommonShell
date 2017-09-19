@@ -47,7 +47,6 @@ if [ "${pidnum}" -eq "0" ];then
   writeLog "start merge data file"
   merge_file
   mv "${filepath}${dest_file_name}" "${despath}${dest_file_name}"
-  rm "${filepath}BILL_ACCOUNT_${i}.ctl"
   writeLog "=====end====="
   exit 0
 fi
